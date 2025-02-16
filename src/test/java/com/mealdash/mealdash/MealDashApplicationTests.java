@@ -1,10 +1,10 @@
-package com.fooddelivery.fooddelivery;
+package com.mealdash.mealdash;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FooddeliveryApplicationTests {
+class MealDashApplicationTests {
 
 	@Test
 	void contextLoads() {
