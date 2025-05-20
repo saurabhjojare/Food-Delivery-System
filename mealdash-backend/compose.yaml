@@ -1,12 +1,21 @@
-version: '3.8'
-
 services:
-  backend:
-    build: .
+  mongo:
+    image: mongo:8.0.9
+    container_name: mealdash-mongo
     ports:
-      - "8080:8080"
+      - 27017:27017
+    volumes:
+      - mongo-data:/data/db
+
+  app:
+    build: .
+    container_name: mealdash-app
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongo
     environment:
-      SPRING_DATA_MONGODB_URI: "mongodb+srv://saurabhjojare:mealdashprod%23123@mealdash-db.mus56qs.mongodb.net/food_delivery?retryWrites=true&w=majority&appName=mealdash-db"
-      JWT_SECRET: "358c13e4fa6974bf3d258768cc0b724725639bde5413893f9d66dc747f6e0327"
-      STRIPE_API_KEY: ""
-      PAYPAL_API_KEY: ""
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/mealdashdatabase
+
+volumes:
+  mongo-data:

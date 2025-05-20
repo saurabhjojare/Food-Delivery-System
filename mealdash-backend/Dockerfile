@@ -1,14 +1,5 @@
-# Use lightweight OpenJDK 17 image
-FROM openjdk:17-jdk-slim
-
-# Create a volume pointing to /tmp
-VOLUME /tmp
-
-# Copy the Spring Boot executable jar to the container
-COPY target/*.jar app.jar
-
-# Expose port 8080 (Spring Boot default)
+FROM openjdk:21-jdk-slim
+WORKDIR /app
+COPY target/mealdash-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
-
-# Run the jar file
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
