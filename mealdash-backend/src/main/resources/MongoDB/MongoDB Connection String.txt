@@ -1,0 +1,1 @@
+mongodb+srv://saurabhjojare:mealdashprod#123@mealdash-db.mus56qs.mongodb.net/?retryWrites=true&w=majority&appName=mealdash-db
