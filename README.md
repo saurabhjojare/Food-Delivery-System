@@ -69,4 +69,4 @@ A full-stack hobby project simulating a food delivery platform. Users can browse
 1. **Clone the repository**
    ```bash
    git clone https://github.com/saurabhjojare/Food-Delivery-System.git
-   cd food-delivery-app
+   cd Food-Delivery-System
